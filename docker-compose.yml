@@ -1,0 +1,11 @@
+services:
+  graphql-sec:
+    build: .
+    image: graphql-security-suite
+    container_name: graphql-sec
+    ports:
+      - "8787:8787"
+    environment:
+      - NODE_ENV=production
+      - PORT=8787
+    restart: unless-stopped

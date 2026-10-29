@@ -1,0 +1,79 @@
+:root {
+  /* TURA dark palette */
+  --bg: #0a0a0b;
+  --bg-2: #0e0e10;
+  --surface: #141416;
+  --surface-2: #1b1b1f;
+  --surface-3: #232329;
+  --border: #2a2a31;
+  --fg: #ffffff;
+  --fg-muted: #9a9aa3;
+  --fg-dim: #6c6c76;
+
+  /* Accent (hot pink/crimson) */
+  --accent: #ff1e56;
+  --accent-2: #ff5f87;
+  --cyan: #19d2e5;
+  --orange: #ff8a3d;
+
+  /* Severity / status colors (always shown with a text label) */
+  --sev-critical: #ff2d55;
+  --sev-high: #ff7a1a;
+  --sev-medium: #f2c53d;
+  --sev-low: #4c8dff;
+  --sev-info: #9ba1ac;
+  --ok: #37d39b;
+
+  --radius: 14px;
+  --radius-sm: 9px;
+  --shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+
+  --font-display: "Archivo", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--fg);
+  background:
+    radial-gradient(1200px 700px at 12% -5%, rgba(255, 255, 255, 0.06), transparent 60%),
+    radial-gradient(900px 600px at 95% 0%, rgba(255, 30, 86, 0.06), transparent 55%),
+    var(--bg);
+  background-attachment: fixed;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+a {
+  color: var(--accent-2);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--surface-3);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}

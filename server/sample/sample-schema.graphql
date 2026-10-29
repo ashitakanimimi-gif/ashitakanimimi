@@ -1,0 +1,36 @@
+"""A deliberately imperfect sample schema for trying the Analyzer offline."""
+type User {
+  id: ID!
+  email: String!
+  password: String          # sensitive field exposed
+  apiKey: String            # sensitive field exposed
+  posts: [Post!]!           # list without pagination
+  role: String @deprecated(reason: "use roles")
+}
+
+type Post {
+  id: ID!
+  title: String!
+  body: String
+  author: User!
+  comments: [Comment!]!     # list without pagination
+}
+
+type Comment {
+  id: ID!
+  text: String!
+  author: User!
+}
+
+type Query {
+  me: User
+  users: [User!]!           # list without pagination
+  post(id: ID!): Post
+  posts(first: Int, after: String): [Post!]!
+}
+
+type Mutation {
+  createPost(title: String!, body: String): Post!
+  deleteUser(id: ID!): Boolean
+  updateUserRole(id: ID!, role: String!): User!
+}
